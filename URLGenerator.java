@@ -17,33 +17,11 @@ public class URLGenerator {
         
         for (int i = 0; i < urls.length; i++) {
             String url = urls[i].toLowerCase(); // Convert URL to lower case for uniformity
-            results[i] = isValidURL(url); // Validate the URL and store the result
+            results[i] = validateURLs(url); // Validate the URL and store the result
         }
         
         return results;
     }
-
-    // /**
-    //  * Checks if the URL is valid based on predefined rules.
-    //  *
-    //  * @param url URL to validate
-    //  * @return true if the URL is valid, false otherwise
-    //  */
-    // private boolean isValidURL(String url) {
-    //     // Check if the URL contains "amazon" or "aws"
-    //     if (!url.contains("amazon") && !url.contains("aws")) {
-    //         return false;
-    //     }
-
-    //     // Check if the URL length is within the valid range
-    //     if (url.length() < 5 || url.length() > 16) {
-    //         return false;
-    //     }
-
-    //     // Check if the URL contains only valid characters
-    //     return url.matches("[a-zA-Z0-9_/.]*");
-    // }
-
     
     public static boolean[] validateURLs(String[] urls) {
         boolean[] results = new boolean[urls.length];
