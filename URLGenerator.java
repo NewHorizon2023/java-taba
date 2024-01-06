@@ -6,6 +6,10 @@ public class URLGenerator {
 
     }
 
+    public URLGenerator(String companyName) {
+        this.companyName = companyName;
+    }
+
     public void setCompanyName(String companyName) {
         this.companyName = companyName;
     }
@@ -23,24 +27,13 @@ public class URLGenerator {
      */
     public boolean[] validateURLs(String[] urls) {
         boolean[] results = new boolean[urls.length];
-        
-        for (int i = 0; i < urls.length; i++) {
-            String url = urls[i].toLowerCase(); // Convert URL to lower case for uniformity
-            results[i] = validateURLs(url); // Validate the URL and store the result
-        }
-        
-        return results;
-    }
-    
-    public static boolean[] validateURLs(String[] urls) {
-        boolean[] results = new boolean[urls.length];
         for (int i = 0; i < urls.length; i++) {
             results[i] = isValidURL(urls[i]);
         }
         return results;
     }
 
-    private static boolean isValidURL(String url) {
+    private boolean isValidURL(String url) {
         if (url.length() < 5 || url.length() > 16) {
             return false;
         }
@@ -52,9 +45,6 @@ public class URLGenerator {
 
         return url.matches("^[a-zA-Z0-9_/.]+$");
     }
-
-
-    
 
 
     // Method to generate URL based on the given company name
