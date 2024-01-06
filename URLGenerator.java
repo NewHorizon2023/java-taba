@@ -6,6 +6,15 @@ public class URLGenerator {
 
     }
 
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+
     /**
      * Validates an array of URLs based on specific rules.
      *
@@ -47,13 +56,6 @@ public class URLGenerator {
 
     
 
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
-    }
-
-    public String getCompanyName() {
-        return companyName;
-    }
 
     // Method to generate URL based on the given company name
     public void compute() {
