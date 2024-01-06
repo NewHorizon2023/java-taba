@@ -23,26 +23,51 @@ public class URLGenerator {
         return results;
     }
 
-    /**
-     * Checks if the URL is valid based on predefined rules.
-     *
-     * @param url URL to validate
-     * @return true if the URL is valid, false otherwise
-     */
-    private boolean isValidURL(String url) {
-        // Check if the URL contains "amazon" or "aws"
-        if (!url.contains("amazon") && !url.contains("aws")) {
-            return false;
-        }
+    // /**
+    //  * Checks if the URL is valid based on predefined rules.
+    //  *
+    //  * @param url URL to validate
+    //  * @return true if the URL is valid, false otherwise
+    //  */
+    // private boolean isValidURL(String url) {
+    //     // Check if the URL contains "amazon" or "aws"
+    //     if (!url.contains("amazon") && !url.contains("aws")) {
+    //         return false;
+    //     }
 
-        // Check if the URL length is within the valid range
+    //     // Check if the URL length is within the valid range
+    //     if (url.length() < 5 || url.length() > 16) {
+    //         return false;
+    //     }
+
+    //     // Check if the URL contains only valid characters
+    //     return url.matches("[a-zA-Z0-9_/.]*");
+    // }
+
+    
+    public static boolean[] validateURLs(String[] urls) {
+        boolean[] results = new boolean[urls.length];
+        for (int i = 0; i < urls.length; i++) {
+            results[i] = isValidURL(urls[i]);
+        }
+        return results;
+    }
+
+    private static boolean isValidURL(String url) {
         if (url.length() < 5 || url.length() > 16) {
             return false;
         }
 
-        // Check if the URL contains only valid characters
-        return url.matches("[a-zA-Z0-9_/.]*");
+        String[] parts = url.split("\\.", 2);
+        if (parts.length < 2 || !(parts[0].equals("amazon") || parts[0].equals("aws"))) {
+            return false;
+        }
+
+        return url.matches("^[a-zA-Z0-9_/.]+$");
     }
+
+
+    
 
     public void setCompanyName(String companyName) {
         this.companyName = companyName;
