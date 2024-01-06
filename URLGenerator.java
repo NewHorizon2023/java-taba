@@ -146,34 +146,4 @@ public class URLGenerator {
         }
         return false;
     }
-
-    // Main method to interact with the user and demonstrate functionality
-    /*public void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        // Prompt the user for the number of URLs to validate
-        System.out.println("Enter the number of URLs to validate:");
-        int numURLs = scanner.nextInt();
-        scanner.nextLine(); // Consume the newline character
-
-        // Initialize array to store the URLs
-        String[] urls = new String[numURLs];
-
-        // Read URLs from the user
-        for (int i = 0; i < numURLs; i++) {
-            System.out.println("Enter URL " + (i + 1) + ":");
-            urls[i] = scanner.nextLine();
-        }
-
-        // Validate URLs and store the results
-        boolean[] validations = validateURLs(urls);
-
-        // Display the validation results
-        for (int i = 0; i < validations.length; i++) {
-            System.out.println("URL " + (i + 1) + " (" + urls[i] + ") is valid: " + validations[i]);
-        }
-
-        // Close the scanner
-        scanner.close();
-    }*/
 }
